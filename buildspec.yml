@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo installing Django and pip
       - sudo apt-get update
-      - sudo apt install python3-pip -y
-      - pip3 install django -y
+      - sudo apt-get install -y python3-pip python3-dev libpq-dev
+      - pip3 install --upgrade pip
+      - pip3 install Django==3.2.9
   build:
     commands:
-      - echo Build started on `date`
-  post_build:
-    commands:
-      - echo Build completed on `date`
+      - python3 manage.py makemigrations
+      - python3 manage.py migrate
+      - python3 manage.py runserver 0.0.0.0:8000
+
