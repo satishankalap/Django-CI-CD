@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo installing Django and pip
+      - sudo apt-get update
+      - sudo apt install python3-pip -y
+      - pip3 install django -y
+  build:
+    commands:
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - echo Build completed on `date`
