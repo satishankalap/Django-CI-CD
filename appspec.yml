@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+ - source: /
+   destination: /
+hooks:
+ AfterInstall:
+  - location: scripts/code.sh
+    timeout: 200
+    runas: root
+ ApplicationStart:
+  - location : scripts/run.sh
+    timeout: 200
+    runas: root
