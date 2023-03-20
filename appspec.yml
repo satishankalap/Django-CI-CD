@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
  - source: /
-   destination: /root/
+   destination: /home/ubuntu
 hooks:
  AfterInstall:
   - location: scripts/code.sh
     timeout: 200
-    runas: root
+    runas: ubuntu
